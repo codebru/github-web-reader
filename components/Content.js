@@ -24,7 +24,6 @@ class Content extends Component {
     return (
       <div>
         {content}
-        <p>Test</p>
       </div>
     );
   }
