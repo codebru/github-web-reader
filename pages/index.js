@@ -1,12 +1,12 @@
 import Layout from '../components/Layout';
-import BlogList from '../components/Blog/List';
+import Content from '../components/Content';
 
 function Index() {
   return (
     <div>
       <Layout>
         <h1>Blog</h1>
-        <BlogList />
+        <Content />
       </Layout>
     </div>
   );
