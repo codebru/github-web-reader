@@ -5,7 +5,6 @@ function Index() {
   return (
     <div>
       <Layout>
-        <h1>Blog</h1>
         <Content />
       </Layout>
     </div>
