@@ -1,32 +1,16 @@
-import React, { Component } from 'react';
-import Marked from 'marked';
-import Fetch from 'isomorphic-unfetch';
-import ReactParse from 'html-react-parser';
+import PropTypes from 'prop-types';
 
-class Content extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  async componentWillMount() {
-    const res = await Fetch('https://raw.githubusercontent.com/codebru/full-web-dev/master/README.md');
-    const data = await res.text();
-    const contentMd = data;
-    const contentHTML = Marked(contentMd);
-    const contentReact = ReactParse(contentHTML);
-
-    this.setState({ content: contentReact });
-  }
-
-  render() {
-    const { content } = this.state;
-    return (
-      <div>
-        {content}
-      </div>
-    );
-  }
+function Content(props) {
+  const { content } = props;
+  return (
+    <div>
+      {content}
+    </div>
+  );
 }
+
+Content.propTypes = {
+  content: PropTypes.string.isRequired,
+};
 
 export default Content;
