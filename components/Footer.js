@@ -3,7 +3,6 @@ import Link from 'next/link';
 function Footer() {
   return (
     <div>
-      <hr />
       <p>This is a website by Philip Bruland</p>
       <br />
       <p>

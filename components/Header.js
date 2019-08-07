@@ -20,12 +20,13 @@ HeaderLink.propTypes = {
 function Header() {
   return (
     <div>
+      <h1>Title</h1>
       <nav>
-        <menu>
+        <ul>
           <HeaderLink title="home" link="/" />
-        </menu>
+          <HeaderLink title="about" link="/about.md" />
+        </ul>
       </nav>
-      <hr />
     </div>
   );
 }
