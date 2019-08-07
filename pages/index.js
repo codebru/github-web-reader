@@ -20,8 +20,16 @@ Index.propTypes = {
   content: PropTypes.string.isRequired,
 };
 
-Index.getInitialProps = async () => {
-  const res = await Fetch('https://raw.githubusercontent.com/codebru/full-web-dev/master/README.md');
+Index.getInitialProps = async ({ query }) => {
+  let uri = null;
+  if (query.pathName && query.pathName !== '/') {
+    uri = query.pathName;
+  } else {
+    uri = 'README.md';
+  }
+
+  uri = `https://raw.githubusercontent.com/codebru/full-web-dev/master/${uri}`;
+  const res = await Fetch(uri);
   const data = await res.text();
   const contentMd = data;
   const contentHTML = Marked(contentMd);
