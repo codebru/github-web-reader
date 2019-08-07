@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 function Content(props) {
   const { content } = props;
   return (
-    <div>
-      {content}
-    </div>
+    // eslint-disable-next-line react/no-danger
+    <div className="content" dangerouslySetInnerHTML={{ __html: content }} />
   );
 }
 

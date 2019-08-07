@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import Marked from 'marked';
 import Fetch from 'isomorphic-unfetch';
-import ReactParse from 'html-react-parser';
 import Layout from '../components/Layout';
 import Content from '../components/Content';
 
@@ -33,9 +32,8 @@ Index.getInitialProps = async ({ query }) => {
   const data = await res.text();
   const contentMd = data;
   const contentHTML = Marked(contentMd);
-  const contentReact = ReactParse(contentHTML);
 
-  return { content: contentReact };
+  return { content: contentHTML };
 };
 
 export default Index;
