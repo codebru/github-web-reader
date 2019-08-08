@@ -1,5 +1,6 @@
 import Marked from 'marked';
 import Fetch from 'isomorphic-unfetch';
+import { githubUser, githubRepo } from '../config';
 
 const HOUR = 1000 * 60 * 60;
 const dirCache = [];
@@ -39,7 +40,7 @@ async function getPage(path) {
     return cacheResponse;
   }
   // Using the raw access rather than API due to the rate limiting
-  const uri = `https://raw.githubusercontent.com/codebru/markdown-test-repo/master/${path}`;
+  const uri = `https://raw.githubusercontent.com/${githubUser}/${githubRepo}/master/${path}`;
   const res = await Fetch(uri);
   const data = await res.text();
   if (String(data) === '404: Not Found\n') {
@@ -57,7 +58,7 @@ async function getDirectory(path) {
     if (cacheResponse) {
       return cacheResponse;
     }
-    const uri = `https://api.github.com/repos/codebru/markdown-test-repo/contents/${path}`;
+    const uri = `https://api.github.com/repos/${githubUser}/${githubRepo}/contents/${path}`;
     const res = await Fetch(uri);
     const data = await res.json();
     if (!data || !Array.isArray(data) || !Object.prototype.hasOwnProperty.call(data[0], 'path')) {
