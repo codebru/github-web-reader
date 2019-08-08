@@ -34,7 +34,6 @@ function Header(props) {
       <nav>
         <ul>
           {pathElement}
-          <HeaderLink title="about" link="/about.md" />
         </ul>
       </nav>
     </div>
