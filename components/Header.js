@@ -5,7 +5,7 @@ function HeaderLink(props) {
   const { link, title } = props;
   return (
     <li>
-      <Link href={link}>
+      <Link href={`/${link}`}>
         <a>{title}</a>
       </Link>
     </li>
@@ -17,18 +17,30 @@ HeaderLink.propTypes = {
   link: PropTypes.string.isRequired,
 };
 
-function Header() {
+function Header(props) {
+  const { paths } = props;
+  let pathElement = null;
+  if (paths && Array.isArray(paths)) {
+    pathElement = paths.map(path => <HeaderLink title={path} link={path} />);
+  } else {
+    pathElement = String(paths);
+  }
+
   return (
     <div>
       <h1>Title</h1>
       <nav>
         <ul>
-          <HeaderLink title="home" link="/" />
+          {pathElement}
           <HeaderLink title="about" link="/about.md" />
         </ul>
       </nav>
     </div>
   );
 }
+
+Header.propTypes = {
+  paths: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Header;

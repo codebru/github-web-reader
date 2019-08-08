@@ -5,7 +5,7 @@ import Footer from './Footer';
 import SiteStyle from './Style';
 
 function Layout(props) {
-  const { children } = props;
+  const { children, paths } = props;
   return (
     <div className="page">
       <div className="row page-inner">
@@ -15,7 +15,7 @@ function Layout(props) {
         </Head>
         <header className="col-sm-12 col-lg-2 outer">
           <div className="inner">
-            <Header />
+            <Header paths={paths} />
           </div>
         </header>
         <main className="col-sm-12 col-lg-10 outer">
@@ -36,6 +36,7 @@ function Layout(props) {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  paths: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Layout;
