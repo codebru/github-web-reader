@@ -13,12 +13,12 @@ function Layout(props) {
           <title>Markdown Reader</title>
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous" />
         </Head>
-        <header className="col-sm-12 col-lg-2 outer">
+        <header className="col-sm-12 col-lg-3 outer">
           <div className="inner">
             <Header paths={paths} />
           </div>
         </header>
-        <main className="col-sm-12 col-lg-10 outer">
+        <main className="col-sm-12 col-lg-9 outer">
           <div className="inner">
             {children}
           </div>

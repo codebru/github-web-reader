@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import { githubUser, githubRepo } from '../config';
 
 function HeaderLink(props) {
   const { link, title } = props;
@@ -28,7 +29,8 @@ function Header(props) {
 
   return (
     <div>
-      <h1>Title</h1>
+      <h1><strong>{githubRepo}</strong></h1>
+      <h2>by {githubUser}</h2>
       <nav>
         <ul>
           {pathElement}
