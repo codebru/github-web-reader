@@ -6,8 +6,8 @@ function Footer() {
       <p>This is a website by Philip Bruland</p>
       <br />
       <p>
-        The original source of the infromation can be found
         <Link href="https://github.com/codebru/full-web-dev">
+        The original source of the information can be found
           <a> here</a>
         </Link>
         .
