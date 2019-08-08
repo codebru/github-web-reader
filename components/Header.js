@@ -3,7 +3,12 @@ import Link from 'next/link';
 import { githubUser, githubRepo } from '../config';
 
 function HeaderLink(props) {
-  const { link, title } = props;
+  const { link } = props;
+  let { title } = props;
+
+  // Remove file extension
+  title = title.replace(/\.[^/.]+$/, '');
+
   return (
     <li>
       <Link href={`/${link}`}>
