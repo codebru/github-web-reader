@@ -10,7 +10,6 @@ function Footer() {
           <a> Codebru</a>
         </Link>
       </p>
-      <br />
       <p>
         The original source of the information can be found
         <Link href={`https://github.com/${githubUser}/${githubRepo}`}>
