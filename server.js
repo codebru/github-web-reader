@@ -14,9 +14,9 @@ app.prepare().then(() => {
     query.pathName = pathname;
 
     app.render(req, res, '/index', query);
-  }).listen(3000, (err) => {
+  }).listen(80, (err) => {
     if (err) throw err;
     // eslint-disable-next-line no-console
-    console.log('> Ready on http://localhost:3000');
+    console.log('> Ready on http://localhost:80');
   });
 });
