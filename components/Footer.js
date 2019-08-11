@@ -17,6 +17,10 @@ function Footer() {
         </Link>
         .
       </p>
+      <p>
+        Please submit a pull request on github if you would
+        like to add anything.
+      </p>
     </div>
   );
 }
