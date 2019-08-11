@@ -12,6 +12,16 @@ function SiteStyle() {
       color: #88FF88;
       text-decoration: none;
   }
+  a:hover {
+      background-color: #2B2B2B;
+      text-decoration: none;
+  }
+  a:link {
+      color: #88FF88;
+  }
+  a:visited {
+      color: #8888FF;
+  }
   h1 {
       color: #FFFF88;
       font-size: 3em;
@@ -100,9 +110,6 @@ function SiteStyle() {
       display: block;
       padding: 10px;
       text-transform: capitalize;
-  }
-  nav a:hover {
-      background-color: #111;
   }
 `}
     </style>
