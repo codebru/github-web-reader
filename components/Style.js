@@ -6,32 +6,37 @@ function SiteStyle() {
       background-color: #333;
       color: #DDD;
       font-size: 1em;
-      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-family: "Courier New", Courier, monospace;
   }
   a {
-      color: #AAA;
+      color: #88FF88;
       text-decoration: none;
   }
   h1 {
+      color: #FFFF88;
       font-size: 3em;
-      color: #AFA;
+      //font-family: 'Times New Roman', 'Times', serif;
+      text-transform: Capitalize;
   }
   h2 {
-      color: #ADA;
-      font-size: 2em;
+      color: #FF8844;
+      font-size: 2.5em;
   }
   h3 {
-      color: #ABA;
-      font-size: 1em;
+      color: #FF8866;
+      font-size: 2em;
   }
   h4 {
-      font-size: 1em;
+      color: #FF8888;
+      font-size: 1.75em;
   }
   h5 {
-      font-size: 1em;
+      color: #FF88AA;
+      font-size: 1.5em;
   }
   h6 {
-      font-size: 1em;
+      color: #FF88DD;
+      font-size: 1.25em;
   }
 
   div h1:not(:first-child), h2:not(:first-child) {
@@ -50,7 +55,8 @@ function SiteStyle() {
       margin: 10px;
       border-width: 1px;
       border-style: solid;
-      box-shadow: 5px 10px;
+      border-color: #808080;
+      box-shadow: 5px 8px 8px #222;
   }
   .outer {
       padding: 0px;
@@ -71,7 +77,9 @@ function SiteStyle() {
       margin: auto;
       max-width: 1000px;
   }
-  header {
+  header .inner {
+    position: sticky;
+    top: 10px;
   }
   nav {
       padding: none;
