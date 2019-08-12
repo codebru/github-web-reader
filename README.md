@@ -6,11 +6,11 @@ This project takes a Github repo and displays it as a website. It currently only
 npm install
 ```
 - Write github details to config.js
--Run development server
+- Run development server
 ```
 npm run dev
 ```
--Run production server
+- Run production server
 ```
 npm run build
 npm start
