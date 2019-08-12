@@ -1,4 +1,4 @@
-# Github Repo Reader
+# Github Web Reader
 This project takes a Github repo and displays it as a website. It currently only supports markdown.
 ## Installation
 - Install dependencies
