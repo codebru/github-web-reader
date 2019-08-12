@@ -1,5 +1,5 @@
 {
-  "name": "newscomapare",
+  "name": "github-web-reader",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codebru/newscomapare.git"
+    "url": "git+https://github.com/codebru/github-web-reader.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/codebru/newscomapare/issues"
+    "url": "https://github.com/codebru/github-web-reader/issues"
   },
-  "homepage": "https://github.com/codebru/newscomapare#readme",
+  "homepage": "https://github.com/codebru/github-web-reader#readme",
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",
     "marked": "^0.7.0",
