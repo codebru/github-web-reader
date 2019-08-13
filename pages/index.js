@@ -40,7 +40,7 @@ Index.getInitialProps = async ({ query }) => {
     pathArray = await getDirectory(uri);
   } else {
     // Remove the file from the path so we can get the DIR
-    uri2 = uri.lastIndexOf('/') + 1;
+    uri2 = uri.lastIndexOf('/');
     uri2 = uri.substring(0, uri2);
 
     pathArray = await getDirectory(uri2);
