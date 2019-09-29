@@ -31,6 +31,14 @@ Index.getInitialProps = async ({ query }) => {
   }
 
   contentHTML = await getPage(uri);
+  if (!contentHTML) {
+    // This means that the content is a DIR
+    contentHTML = await getPage(`${uri}/README.md`);
+    if (!contentHTML) {
+      contentHTML = 'This is a directory';
+    }
+  }
+
   pathArray = await getTree();
 
   return { content: contentHTML, paths: pathArray };
