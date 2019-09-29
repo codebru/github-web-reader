@@ -27,17 +27,30 @@ function Header(props) {
   const { paths } = props;
   let pathElement = null;
   if (paths && Array.isArray(paths)) {
-    pathElement = paths.map(path => <HeaderLink title={path} link={path} />);
+    const formattedPaths = paths.map((path) => {
+      const splitString = path.split('/');
+      let string = splitString.pop(-1);
+      let n = 0;
+      for (n = 0; n < splitString.length; n += 1) {
+        string = `./${string}`;
+      }
+      return string;
+    });
+    pathElement = formattedPaths.map(path => <HeaderLink key={path} title={path} link={path} />);
   } else {
     pathElement = String(paths);
   }
 
+
   return (
     <div>
       <h1><strong>{githubRepo}</strong></h1>
-      <h2>by {githubUser}</h2>
+      <h2>
+        by
+        {githubUser}
+      </h2>
       <nav>
-        <ul className='row'>
+        <ul className="row">
           {pathElement}
         </ul>
       </nav>

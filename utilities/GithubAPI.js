@@ -5,6 +5,7 @@ import { githubUser, githubRepo } from '../config';
 const HOUR = 1000 * 60 * 60;
 const dirCache = [];
 const pageCache = [];
+const treeCache = [];
 
 function checkCache(cache, path) {
   let entry = null;
@@ -72,4 +73,27 @@ async function getDirectory(path) {
   }
 }
 
-export { getPage, getDirectory };
+async function getTree() {
+  const cacheResponse = checkCache(treeCache, '/');
+  if (cacheResponse) {
+    return cacheResponse;
+  }
+  try {
+    const uri = `https://api.github.com/repos/${githubUser}/${githubRepo}/commits`;
+    const res = await Fetch(uri);
+    const data = await res.json();
+    const uri2 = `https://api.github.com/repos/${githubUser}/${githubRepo}/git/trees/${data[0].sha}?recursive=1`;
+    const res2 = await Fetch(uri2);
+    const data2 = await res2.json();
+    if (!data2.tree) {
+      throw new Error('Unable to fetch tree');
+    }
+    const tree = data2.tree.map(branch => branch.path);
+    addCache(treeCache, '/', tree);
+    return tree;
+  } catch (e) {
+    return `Unable to get data: ${e}`;
+  }
+}
+
+export { getPage, getDirectory, getTree };
