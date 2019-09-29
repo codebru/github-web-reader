@@ -10,7 +10,7 @@ function HeaderLink(props) {
   title = title.replace(/\.[^/.]+$/, '');
 
   return (
-    <li className='col-sm-2 col-lg-12'>
+    <li className="col-sm-2 col-lg-12">
       <Link href={`/${link}`}>
         <a>{title}</a>
       </Link>

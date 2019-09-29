@@ -23,7 +23,6 @@ Index.getInitialProps = async ({ query }) => {
   let pathArray = [];
   let contentHTML = null;
   let uri = null;
-  let uri2 = null;
 
   if (query.pathName && query.pathName !== '/') {
     uri = query.pathName;
