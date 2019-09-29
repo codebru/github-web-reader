@@ -47,6 +47,7 @@ function Header(props) {
       <h1><strong>{githubRepo}</strong></h1>
       <h2>
         by
+        {' '}
         {githubUser}
       </h2>
       <nav>
