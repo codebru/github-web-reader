@@ -2,6 +2,7 @@ const { createServer } = require('http');
 const { parse } = require('url');
 const next = require('next');
 
+const port = process.env.PORT || 3000
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 
@@ -14,9 +15,9 @@ app.prepare().then(() => {
     query.pathName = pathname;
 
     app.render(req, res, '/index', query);
-  }).listen(80, (err) => {
+  }).listen(port, (err) => {
     if (err) throw err;
     // eslint-disable-next-line no-console
-    console.log('> Ready on http://localhost:80');
+    console.log(`> Ready on http://localhost:${port}`);
   });
 });
