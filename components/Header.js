@@ -29,14 +29,16 @@ function Header(props) {
   if (paths && Array.isArray(paths)) {
     const formattedPaths = paths.map((path) => {
       const splitString = path.split('/');
-      let string = splitString.pop(-1);
+      let shortPath = splitString.pop(-1);
       let n = 0;
       for (n = 0; n < splitString.length; n += 1) {
-        string = `./${string}`;
+        shortPath = `./${shortPath}`;
       }
-      return string;
+      return { path, shortPath };
     });
-    pathElement = formattedPaths.map(path => <HeaderLink key={path} title={path} link={path} />);
+    pathElement = formattedPaths.map(
+      path => <HeaderLink key={path.path} title={path.shortPath} link={path.path} />,
+    );
   } else {
     pathElement = String(paths);
   }
