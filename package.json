@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
+    "dev:test": "NEXT_PUBLIC_TEST=true  node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ignore-path .gitignore .",
     "test": "npm run test:accessibility:cli",
+    "test:jouney:gui": "cypress open",
+    "test:journey:cli": "cypress run",
     "test:accessibility:cli": "pa11y-ci --config pa11y.js"
   },
   "repository": {
@@ -29,11 +32,13 @@
     "next": "^12.1.6",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "cypress": "^10.2.0"
   },
   "devDependencies": {
     "eslint": "^8.18.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.30.1",
