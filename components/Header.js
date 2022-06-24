@@ -37,12 +37,11 @@ function Header(props) {
       return { path, shortPath };
     });
     pathElement = formattedPaths.map(
-      path => <HeaderLink key={path.path} title={path.shortPath} link={path.path} />,
+      (path) => <HeaderLink key={path.path} title={path.shortPath} link={path.path} />,
     );
   } else {
     pathElement = String(paths);
   }
-
 
   return (
     <div>

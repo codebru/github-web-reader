@@ -65,7 +65,7 @@ async function getDirectory(path) {
     if (!data || !Array.isArray(data) || !Object.prototype.hasOwnProperty.call(data[0], 'path')) {
       throw new Error('Failed to fetch tree.');
     }
-    const pathArray = data.map(entry => entry.path);
+    const pathArray = data.map((entry) => entry.path);
     addCache(dirCache, path, pathArray);
     return pathArray;
   } catch (e) {
@@ -88,7 +88,7 @@ async function getTree() {
     if (!data2.tree) {
       throw new Error('Unable to fetch tree');
     }
-    const tree = data2.tree.map(branch => branch.path);
+    const tree = data2.tree.map((branch) => branch.path);
     addCache(treeCache, '/', tree);
     return tree;
   } catch (e) {
