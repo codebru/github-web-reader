@@ -12,6 +12,7 @@
     "lint:fix": "eslint --fix --ignore-path .gitignore .",
     "test": "npm run test:accessibility:cli",
     "test:jouney:gui": "cypress open",
+    "test:journey:cli": "cypress run",
     "test:accessibility:cli": "pa11y-ci --config pa11y.js"
   },
   "repository": {
