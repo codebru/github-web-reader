@@ -1,10 +1,11 @@
 const { createServer } = require('http');
 const { parse } = require('url');
 const next = require('next');
+const nextConfig = require('./next.config');
 
 const port = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
+const app = next({ dev, conf: nextConfig });
 
 app.prepare().then(() => {
   createServer((req, res) => {
