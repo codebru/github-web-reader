@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SiteStyle from './Style';
 
 function Layout(props) {
   const { children, paths } = props;
+  const [enableStyle, setEnableStyle] = useState(true);
+
+  const toggleStyle = () => setEnableStyle(!enableStyle);
+
   return (
     <div className="page">
       <div className="row page-inner">
@@ -25,10 +30,14 @@ function Layout(props) {
         </main>
         <footer className="col-sm-12 outer">
           <div className="inner">
-            <Footer />
+            <Footer toggleStyle={toggleStyle} />
           </div>
         </footer>
-        <SiteStyle />
+        {
+          enableStyle
+            ? <SiteStyle />
+            : null
+        }
       </div>
     </div>
   );

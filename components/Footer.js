@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { githubUser, githubRepo } from '../config';
 
-function Footer() {
+function Footer(props) {
+  const { toggleStyle } = props;
+
   return (
     <div>
       <p>
@@ -21,8 +24,21 @@ function Footer() {
         Please submit a pull request on github if you would
         like to add anything.
       </p>
+      {
+        toggleStyle
+          ? <button type="button" onClick={toggleStyle}>Toggle Style</button>
+          : null
+      }
     </div>
   );
 }
+
+Footer.defaultProps = {
+  toggleStyle: null,
+};
+
+Footer.propTypes = {
+  toggleStyle: PropTypes.func,
+};
 
 export default Footer;
