@@ -4,7 +4,8 @@
         "es6": true
     },
     "extends": [
-        "airbnb"
+        "airbnb",
+        "plugin:cypress/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -18,7 +19,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "cypress"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
