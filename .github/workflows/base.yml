@@ -21,3 +21,18 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run lint
+  test-accessibility:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 16.0
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.0
+        cache: 'npm'
+    - run: npm ci
+    - run: |
+      npm run dev &
+      sleep 5 && 
+      curl http://localhost:3000 -I
+    - run: npm run test:accessibility:cli
