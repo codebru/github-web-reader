@@ -14,9 +14,10 @@ function Footer(props) {
         </Link>
       </p>
       <p>
-        The original source of the information can be found
         <Link href={`https://github.com/${githubUser}/${githubRepo}`}>
-          <a> here</a>
+          <a>
+            The original source of the information can be found here
+          </a>
         </Link>
         .
       </p>
