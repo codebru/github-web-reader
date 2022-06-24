@@ -27,17 +27,8 @@ function Header(props) {
   const { paths } = props;
   let pathElement = null;
   if (paths && Array.isArray(paths)) {
-    const formattedPaths = paths.map((path) => {
-      const splitString = path.split('/');
-      let shortPath = splitString.pop(-1);
-      let n = 0;
-      for (n = 0; n < splitString.length; n += 1) {
-        shortPath = `./${shortPath}`;
-      }
-      return { path, shortPath };
-    });
-    pathElement = formattedPaths.map(
-      (path) => <HeaderLink key={path.path} title={path.shortPath} link={path.path} />,
+    pathElement = paths.map(
+      (path) => <HeaderLink key={path} title={path} link={path} />,
     );
   } else {
     pathElement = String(paths);
