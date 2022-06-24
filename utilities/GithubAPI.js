@@ -1,4 +1,4 @@
-import Marked from 'marked';
+import { marked } from 'marked';
 import Fetch from 'isomorphic-unfetch';
 import { githubUser, githubRepo } from '../config';
 
@@ -48,7 +48,7 @@ async function getPage(path) {
     return false;
   }
   const contentMd = data;
-  const contentHTML = Marked(contentMd);
+  const contentHTML = marked(contentMd);
   addCache(pageCache, path, contentHTML);
   return contentHTML;
 }
