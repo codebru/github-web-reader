@@ -38,4 +38,4 @@ jobs:
         npm run dev &
         sleep 5 &&
         curl http://localhost:3000 -I
-    - run: npm run test:${{test-type}}:cli
+    - run: npm run test:${{matrix.test-type}}:cli
